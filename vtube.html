@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VTuber プロフィール</title>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;700;800&family=Yomogi&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            background: linear-gradient(90deg, 
+                rgba(255,240,220,1) 0%, 
+                rgba(255,250,240,0.8) 20%, 
+                rgba(240,240,240,0.6) 50%,
+                rgba(220,230,255,0.8) 80%, 
+                rgba(200,220,255,1) 100%);
+        }
+        .container {
+            display: flex;
+            min-height: 100%;
+        }
+        .profile {
+            width: 50%;
+            padding: 40px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+        .image-container {
+            width: 50%;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+        }
+        .image-container img {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        .styled-text {
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            -webkit-text-stroke: 2px #FFF;
+            text-stroke: 2px #FFF;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+        h1 {
+            font-size: 4em;
+            margin-bottom: 0.2em;
+            color: #FF69B4;
+        }
+        .main-subtitle {
+            font-size: 2.5em;
+            margin-bottom: 0.2em;
+            color: #FF1493;
+        }
+        .subtitle {
+            font-size: 1.5em;
+            margin-bottom: 0.2em;
+            color: #FF69B4;
+        }
+        .description {
+            margin-top: 1em;
+            margin-bottom: 2em;
+            font-size: 1.3em;
+            line-height: 1.8;
+            font-family: 'Yomogi', cursive;
+            color: #FF69B4;
+            text-shadow: 1px 1px 2px rgba(255, 105, 180, 0.3);
+        }
+        .video-container {
+            width: 100%;
+            height: 500px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 2em;
+        }
+        .video-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .schedule-container {
+            width: 100%;
+            height: 600px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .schedule-container iframe {
+            width: 100%;
+            height: 100%;
+            border: solid 1px #777;
+        }
+        .mobile-image {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .profile, .image-container {
+                width: 100%;
+            }
+            .image-container {
+                display: none;
+            }
+            .profile {
+                position: relative;
+                padding: 20px;
+            }
+            .mobile-image {
+                display: block;
+                width: 100%;
+                height: auto;
+                margin-bottom: 20px;
+            }
+            .content-wrapper {
+                background-color: rgba(255, 255, 255, 0.8);
+                padding: 20px;
+                border-radius: 15px;
+                margin-bottom: 20px;
+            }
+            .video-container, .schedule-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile">
+            <img src="image/mei.png" alt="VTuber キャラクター画像" class="mobile-image">
+            <div class="content-wrapper">
+                <h1 class="styled-text">Vtuber</h1>
+                <div class="main-subtitle styled-text">メイフラちゃん</div>
+                <div class="subtitle styled-text">めいふらちゃん</div>
+                <div class="subtitle styled-text">meifura-chan</div>
+                <div class="description">
+                     XRPLedgerが大好きな18さい。持ち前の明るさで、場の空気を和らげる存在。逆神。
+                </div>
+            </div>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/mAEqwxmLmuk?si=1vacZ-vZSqoh-TU6&amp;start=21" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="schedule-container">
+                <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FTokyo&bgcolor=%23ef92d8&mode=WEEK&title=%E3%83%A1%E3%82%A4%E3%83%95%E3%83%A9%E3%81%A1%E3%82%83%E3%82%93%E9%85%8D%E4%BF%A1&src=bGVkLnJlY2h3ZS43NzdAZ21haWwuY29t&src=amEuamFwYW5lc2UjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23039BE5&color=%237986CB" style="border:solid 1px #777" frameborder="0" scrolling="no"></iframe>
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="image/mei.png" alt="VTuber キャラクター画像">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>メイフラちゃんクイズ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&family=Zen+Maru+Gothic:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Zen Maru Gothic', sans-serif;
+            height: 100%;
+        }
+        body {
+            background-image: url('image/00021-1232764038.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .quiz-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+            max-width: 500px;
+            width: 90%;
+        }
+        h1 {
+            color: #FF69B4;
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .question {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+            border: 2px solid #FF69B4;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-family: 'Zen Maru Gothic', sans-serif;
+        }
+        button {
+            background-color: #FF69B4;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Zen Maru Gothic', sans-serif;
+        }
+        button:hover {
+            background-color: #FF1493;
+            transform: scale(1.05);
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 20px;
+            color: #FF69B4;
+        }
+        #correct-button {
+            display: none;
+            margin-top: 20px;
+            background-color: #FFD700;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>メイフラちゃんクイズ</h1>
+        <div id="question" class="question"></div>
+        <input type="text" id="answer" placeholder="ひらがなで答えを入力してください">
+        <button onclick="checkAnswer()">回答する</button>
+        <div id="result"></div>
+        <button id="correct-button" onclick="goToNextPage()" style="display: none;">Correct!</button>
+    </div>
+
+    <script>
+    const q=["\u30E1\u30A4\u30D5\u30E9\u3061\u3083\u3093\u306E\u9AEA\u306E\u8272\u306F\uFF1F","\u30E1\u30A4\u30D5\u30E9\u3061\u3083\u3093\u306E\u597D\u304D\u306A\u4EEE\u60F3\u901A\u8CA8\u306F\uFF1F","\u30E1\u30A4\u30D5\u30E9\u3061\u3083\u3093\u306E\u30A2\u30EB\u30D0\u30A4\u30C8\u5148\u306F\uFF1F","\u30E1\u30A4\u30D5\u30E9\u3061\u3083\u3093\u306E\u75C5\u6C17\u306F\uFF1F","\u30E1\u30A4\u30D5\u30E9\u3061\u3083\u3093\u306E\u30DA\u30C3\u30C8\u306F\uFF1F","\u30E1\u30A4\u30D5\u30E9\u3061\u3083\u3093\u306E\u597D\u304D\u306A\u30A2\u30A4\u30C9\u30EB\u306E\u56FD\u306F\uFF1F","\u30E1\u30A4\u30D5\u30E9\u3061\u3083\u3093\u306E\u5E74\u9F62\u306F\uFF1F","\u30E1\u30A4\u30D5\u30E9\u3061\u3083\u3093\u306E\u4F4F\u3093\u3067\u3044\u308B\u5834\u6240\u306F\uFF1F","\u30E1\u30A4\u30D5\u30E9\u3061\u3083\u3093\u306E\u5ACC\u3044\u306A\u3082\u306E\u306F\uFF1F","\u30E1\u30A4\u30D5\u30E9\u3061\u3083\u3093\u306E\u6027\u683C\u306F\uFF1F"];
+    const a=["\u3074\u3093\u304F","\u3048\u3063\u304F\u3059\u3042\u30FC\u308B\u3074\u30FC","\u304A\u306F\u306A\u3084\u3055\u3093","\u3078\u3093\u305A\u3064\u3046","\u3044\u306C","\u3061\u3085\u3046\u3054\u304F","\u3058\u3085\u3046\u306F\u3063\u3055\u3044","\u3081\u305F\u3070\u30FC\u3059","\u3071\u305D\u3053\u3093","\u304F\u3089\u3044"];
+    let c=0,r=0;function l(){document.getElementById("question").textContent=q[c];document.getElementById("answer").value="";document.getElementById("result").textContent="";}function checkAnswer(){const u=document.getElementById("answer").value.toLowerCase();if(u===a[c]){document.getElementById("result").textContent="\u6B63\u89E3\uFF01";r++;c++;if(c<q.length){setTimeout(l,1000);}else{s();}}else{document.getElementById("result").textContent="\u4E0D\u6B63\u89E3\u3002\u3082\u3046\u4E00\u5EA6\u8A66\u3057\u3066\u304F\u3060\u3055\u3044\u3002";}}function s(){document.getElementById("question").textContent="\u30AF\u30A4\u30BA\u7D42\u4E86\uFF01";document.getElementById("answer").style.display="none";document.querySelector("button").style.display="none";document.getElementById("result").textContent=`${r}\u554F\u6B63\u89E3\u3057\u307E\u3057\u305F\uFF01`;if(r===q.length){document.getElementById("correct-button").style.display="inline-block";}}function goToNextPage(){window.location.href="congratulations.html";}l();
+    </script>
+</body>
+</html>

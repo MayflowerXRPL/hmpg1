@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ピックアップクリエイター</title>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;700&family=Yusei+Magic&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            overflow-x: hidden;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(135, 206, 250, 0.7);
+            font-size: 28px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Yusei Magic', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+        .header-text {
+            display: block;
+            animation: softColorChange 90s linear infinite;
+        }
+        @keyframes softColorChange {
+            0%, 100% { color: #FFB3BA; }
+            16.6% { color: #FFDFBA; }
+            33.3% { color: #FFFFBA; }
+            50% { color: #BAFFC9; }
+            66.6% { color: #BAE1FF; }
+            83.3% { color: #E1BAFF; }
+        }
+        .profile-container {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 120px 20px 20px;
+            box-sizing: border-box;
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 20px;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .profile-info {
+            padding: 20px;
+            background-color: rgba(255, 240, 245, 0.7);
+        }
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 3px solid #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #ff69b4;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        p, a {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        a {
+            color: #ff69b4;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            margin-right: 10px;
+        }
+        a:hover {
+            color: #ff1493;
+        }
+        .icon, .icon-x {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+        .icon-cafe {
+            border-radius: 50%;
+        }
+        .introduction {
+            width: 90%;
+            text-align: center;
+            font-family: 'Yusei Magic', sans-serif;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: rgba(255, 105, 180, 0.7);
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            white-space: normal;
+        }
+        .transition-banner {
+            position: relative;
+            height: 100px;
+            background: linear-gradient(135deg, 
+                rgba(255, 182, 193, 0.9) 0%, 
+                rgba(255, 218, 185, 0.9) 50%, 
+                rgba(173, 216, 230, 0.9) 100%);
+            transform: skewY(-3deg);
+            margin-top: -50px;
+            margin-bottom: -50px;
+            z-index: 2;
+        }
+
+        /* PCブラウザ向けの調整 */
+        @media screen and (min-width: 768px) {
+            .header {
+                font-size: 36px;
+            }
+            .header-text {
+                display: inline;
+            }
+            .profile-container {
+                padding: 160px 40px 40px;
+            }
+            .container {
+                display: flex;
+                max-width: 1000px;
+            }
+            .gallery {
+                flex: 1;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .profile-info {
+                flex: 1;
+            }
+            .introduction {
+                position: absolute;
+                top: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: auto;
+                font-size: 20px;
+                padding: 10px 20px;
+                white-space: nowrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <span class="header-text">ピックアップ</span>
+        <span class="header-text">クリエイター</span>
+    </div>
+    
+    <!-- @LicosNFT のプロフィール -->
+    <div class="profile-container" style="background-image: url('image/00008-3193041692.png');">
+        <div class="introduction">
+            XRPLedgerで活躍している<br>日本人クリエイターを紹介します
+        </div>
+        <div class="container">
+            <div class="gallery">
+                <div class="gallery-item"><img src="image/lico1.png" alt="Lico 1"></div>
+                <div class="gallery-item"><img src="image/lico2.png" alt="Lico 2"></div>
+                <div class="gallery-item"><img src="image/lico3.png" alt="Lico 3"></div>
+                <div class="gallery-item"><img src="image/lico4.png" alt="Lico 4"></div>
+            </div>
+            <div class="profile-info">
+                <img src="image/licolico1.png" alt="@LicosNFT" class="profile-img">
+                <h1>@LicosNFT</h1>
+                <p>XRPLedgerでTOPの売り上げを誇るクリエイター。なんと10代女子。</p>
+                <p>
+                    <a href="https://twitter.com/LicosNFT" target="_blank">
+                        <svg class="icon-x" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" fill="#000000"/>
+                        </svg>
+                        X
+                    </a>
+                    <a href="https://xrp.cafe/collection/xggg" target="_blank">
+                        <img src="image/cafe.png" alt="xrp.cafe" class="icon icon-cafe">
+                        X GuruGuruGirl | xrp.cafe
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="transition-banner"></div>
+
+    <!-- @hayaiakachan のプロフィール -->
+    <div class="profile-container" style="background-image: url('image/haikei2.png');">
+        <div class="container">
+            <div class="gallery">
+                <div class="gallery-item"><img src="image/hayai1.png" alt="Hayai 1"></div>
+                <div class="gallery-item"><img src="image/hayai2.png" alt="Hayai 2"></div>
+                <div class="gallery-item"><img src="image/hayai3.png" alt="Hayai 3"></div>
+                <div class="gallery-item"><img src="image/hayai4.png" alt="Hayai 4"></div>
+            </div>
+            <div class="profile-info">
+                <img src="image/hayai.png" alt="@hayaiakachan" class="profile-img">
+                <h1>@hayaiakachan</h1>
+                <p>はやいあかちゃんです。</p>
+                <p>
+                    <a href="https://twitter.com/hayaiakachan" target="_blank">
+                        <svg class="icon-x" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" fill="#000000"/>
+                        </svg>
+                        X
+                    </a>
+                    <a href="https://xrp.cafe/collection/xcandy" target="_blank">
+                        <img src="image/cafe.png" alt="xrp.cafe" class="icon icon-cafe">
+                        XRP Cafe
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

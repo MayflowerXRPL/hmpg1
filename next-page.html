@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>おめでとうございます！</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+        body {
+            font-family: 'Fredoka One', cursive;
+            background-color: #FFE6F2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
+        }
+        h1 {
+            color: #FF69B4;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #FF1493;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .connect-button {
+            background-color: #FF1493;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .connect-button:hover {
+            background-color: #FF69B4;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>おめでとうございます！</h1>
+        <p>1000XRPを請求するには<br>こちらからXAMAN WALLETをコネクトしてください。</p>
+        <button class="connect-button" onclick="connectWallet()">コネクト</button>
+    </div>
+
+    <script>
+        function connectWallet() {
+            alert('XAMAN WALLETとの接続を試みます。（実際の接続は行われません）');
+        }
+    </script>
+</body>
+</html>

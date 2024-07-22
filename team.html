@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team - メイフラちゃんプロジェクト</title>
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Yusei Magic', sans-serif;
+            text-align: center;
+            background-image: url('./image/00001-58265552.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .team-members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .team-member {
+            flex-basis: calc(50% - 20px);
+            max-width: 400px;
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        h1 {
+            color: #FF69B4;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .team-member {
+                flex-basis: 100%;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            p {
+                font-size: 14px;
+            }
+        }
+
+        @media (orientation: landscape) and (max-height: 500px) {
+            .container {
+                flex-direction: row;
+                align-items: center;
+            }
+            .team-members {
+                flex-direction: row;
+            }
+            .team-member {
+                flex-basis: calc(50% - 10px);
+            }
+            h1 {
+                writing-mode: vertical-rl;
+                text-orientation: mixed;
+                transform: rotate(180deg);
+                margin-right: 20px;
+                height: 80vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>メイフラちゃんプロジェクト チーム</h1>
+        <div class="team-members">
+            <div class="team-member">
+                <img src="./image/00001-58265550.png" alt="SK-KASOU Image">
+                <p>SK-KASOU developer&translator</p>
+            </div>
+            <div class="team-member">
+                <img src="./image/00001-58265551.png" alt="TOSHIBoo Image">
+                <p>TOSHIBoo community manager</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

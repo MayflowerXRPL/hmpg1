@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XRPLedger</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #1a1a2e;
+            color: white;
+        }
+        .title-section {
+            background-color: #4a0082;
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .background-images {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5vh 0;
+            box-sizing: border-box;
+            opacity: 0.1;
+            transform: rotate(-15deg);
+        }
+        .background-images img {
+            width: 30vw;
+            max-width: 400px;
+            height: auto;
+            object-fit: contain;
+        }
+        .content-section {
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0;
+            transition: opacity 1.5s;
+        }
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1.5s, transform 1.5s;
+            text-align: center;
+        }
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #7b68ee;
+        }
+        p, ul {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            text-align: left;
+            font-weight: 300;
+        }
+        strong {
+            font-weight: 700;
+            color: #7b68ee;
+        }
+        .fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #7b68ee;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+            margin-right: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s, transform 1s, background-color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #6a5acd;
+        }
+        .cta-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+            .content-section {
+                padding: 20px 10px;
+            }
+            #main-title .line-break {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="title-section">
+        <div class="background-images">
+            <img src="image/xrpledger.png" alt="XRP Ledger Logo">
+            <img src="image/xrpledger.png" alt="XRP Ledger Logo">
+            <img src="image/xrpledger.png" alt="XRP Ledger Logo">
+        </div>
+        <h1 id="main-title">XRPLedgerを<span class="line-break"></span>はじめよう</h1>
+    </div>
+    <div class="content-section" id="content">
+        <h2>XRPLedgerとは</h2>
+        <p>XRPLedgerは、デジタル資産の送金や金融取引を迅速、安全、かつ低コストで行うことができる分散型の公開ブロックチェーンプラットフォームです。以下の特徴があります</p>
+        <ul>
+            <li><strong>高速取引：</strong><br>取引が数秒で完了し、従来の銀行送金よりもはるかに速いです。</li>
+            <li><strong>低コスト：</strong><br>取引手数料が非常に低く、国際送金などのコストを大幅に削減できます。</li>
+            <li><strong>分散型システム：</strong><br>中央管理者がいないため、誰でも自由に利用でき、システムの透明性が高いです。</li>
+            <li><strong>多通貨対応：</strong><br>XRP（エックスアールピー）を使用しますが、XRPL内で作成されたトークンも扱えます。</li>
+            <li><strong>環境にやさしい：</strong><br>他の多くの仮想通貨と比べて、エネルギー消費量が少ないです。</li>
+        </ul>
+        <p>XRPLedgerは、主に以下のような用途で利用されています</p>
+        <ul>
+            <li>国際送金</li>
+            <li>デジタル資産の取引</li>
+            <li>金融サービスのインフラ</li>
+            <li>新しい形態の決済システム</li>
+        </ul>
+        <p>簡単に言えば、XRPLedgerは、お金やデジタル資産をインターネット上で素早く、安く、安全に送れる仕組みだと考えることができます。従来の銀行システムよりも効率的で、誰でも簡単に利用できるのが特徴です。</p>
+        <div class="cta-container">
+            <button id="more-info-button" class="cta-button" onclick="window.open('https://xrpl.org/ja/', '_blank')">もっと詳しく</button>
+            <button id="join-button" class="cta-button" onclick="window.location.href='xaman.html'">XRPLedgerに参加する</button>
+        </div>
+    </div>
+
+    <script>
+        function showContent() {
+            const content = document.getElementById('content');
+            const moreInfoButton = document.getElementById('more-info-button');
+            const joinButton = document.getElementById('join-button');
+
+            content.style.opacity = '1';
+            
+            setTimeout(() => {
+                moreInfoButton.style.opacity = '1';
+                moreInfoButton.style.transform = 'translateY(0)';
+                joinButton.style.opacity = '1';
+                joinButton.style.transform = 'translateY(0)';
+            }, 1000);
+
+            window.scrollTo({
+                top: document.querySelector('.content-section').offsetTop,
+                behavior: 'smooth'
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const mainTitle = document.getElementById('main-title');
+            
+            // 初期タイトルのフェードイン
+            setTimeout(() => {
+                mainTitle.classList.add('fade-in');
+            }, 100);
+
+            // タイトル切り替えとフェードイン
+            setTimeout(() => {
+                mainTitle.classList.remove('fade-in');
+                setTimeout(() => {
+                    mainTitle.innerHTML = 'XRPLedger<span class="line-break"></span>とは？';
+                    mainTitle.classList.add('fade-in');
+                }, 1500);
+            }, 3000);
+
+            // 画面遷移と説明内容のフェードイン
+            setTimeout(showContent, 6000);
+        });
+
+        // ページが表示されたときに実行（ブラウザバック時など）
+        window.onpageshow = function(event) {
+            if (event.persisted) {
+                showContent();
+            }
+        };
+    </script>
+</body>
+</html>
